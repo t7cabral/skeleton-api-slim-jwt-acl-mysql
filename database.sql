@@ -16,6 +16,28 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_api_slim_modelo` /*!40100 DEFAULT CH
 
 USE `db_api_slim_modelo`;
 
+/*Table structure for table `news` */
+
+DROP TABLE IF EXISTS `news`;
+
+CREATE TABLE `news` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `body` blob,
+  `created_by` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NULL DEFAULT NULL,
+  `delete_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `created_by` (`created_by`),
+  CONSTRAINT `news_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `sis_acl_users` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `news` */
+
+insert  into `news`(`id`,`title`,`description`,`body`,`created_by`,`created_at`,`update_at`,`delete_at`) values (1,'Bolsonaro reitera que decisão sobre médicos cubanos é humanitária',NULL,'O presidente eleito, Jair Bolsonaro, reiterou hoje (16) que a decisão de impor novas exigências aos profissionais cubanos, vinculados ao Programa Mais Médicos, tem razões humanitárias, para protegê-los do que considera “trabalho escravo” e preservar os serviços prestados à população brasileira. Ele garante que o ­­programa não será suspenso.\r\nEntre as medidas, estão fazer o Revalida – prova que verifica conhecimentos específicos na área médica, receber integralmente o salário e poder trazer a família para o Brasil. Cuba ­decidiu­ deixar­ o­ programa­­ após as declarações de Bolsonaro. ­O­ ­Ministério da Saúde­­ ­informou nesta sexta-feira que a seleção dos brasileiros em substituição aos cubanos ocorrerá ainda este mês.',1,'2018-11-16 20:32:44',NULL,NULL),(2,'Tocantinense tatua imagem da mão de Lula e diz que está confiante na vitória de Haddad',NULL,'No domingo­ (28), ­será escolhido­ o novo Presidente do Brasil. ­Bolsonaro ou Haddad?.Em todos os lugares é fácil encontrar adeptos­­ desses dois candidatos.­ No Tocantins, na cidade de Silvanópolis, nossa equipe conheceu Estela Márcia Ferreira da Silva. Ela é apaixonado por Luiz Inácio Lula da Silva.',2,'2018-11-17 00:26:01',NULL,'2018-11-17 00:26:01'),(3,'Governador determina recolhimento de veículos e reavaliação da utilização da frota oficial',NULL,'De autoria do governador Mauro Carlesse, o Decreto n° 5.869, publicado no Diário Oficial dessa quinta-feira, 25, determina o recolhimento dos veículos oficiais, locados ou da frota própria, inclusive os de representação, na garagem central ou em pátios das unidades administrativas. De acordo com a publicação, o decreto entra em vigor nesta sexta-feira, 26, e a determinação corresponde aos veículos oficiais utilizados para atividades administrativas em todos os órgãos do Poder Executivo.',3,'2018-11-17 00:20:47',NULL,'2018-11-17 00:20:47'),(4,'Title news 3','Description news 3','Body news 3',3,'2018-11-17 13:11:57','2018-11-17 13:11:57',NULL);
+
 /*Table structure for table `sis_acl_groups` */
 
 DROP TABLE IF EXISTS `sis_acl_groups`;
@@ -83,7 +105,7 @@ CREATE TABLE `sis_acl_users` (
 
 /*Data for the table `sis_acl_users` */
 
-insert  into `sis_acl_users`(`id`,`login`,`senha`,`nome`,`email`,`criado_em`) values (1,'thiago23','tac23','Thiago Cabral','thiago231286@gmail.com','2018-11-12 13:19:04'),(2,'angela12','abc12','Angela Barbosa','angeça_odonto@yahoo.com.br','2018-11-12 13:19:01'),(3,'alice16','abc16','Alice Cabral','alice2018@gmail.com','2018-11-12 14:10:32');
+insert  into `sis_acl_users`(`id`,`login`,`senha`,`nome`,`email`,`criado_em`) values (1,'thiago23','tac23','Thiago Cabral','thiago231286@gmail.com','2018-11-12 13:19:04'),(2,'angela12','abc12','Angela Barbosa','angela@gmail.com','2018-11-18 23:37:09'),(3,'alice16','abc16','Alice Cabral','alice@gmail.com','2018-11-18 23:37:17');
 
 /*Table structure for table `sis_acl_users_on_groups` */
 

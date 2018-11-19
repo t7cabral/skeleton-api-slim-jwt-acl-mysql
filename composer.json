@@ -18,6 +18,6 @@
         }
     },
     "scripts": {
-        "start2": "php -S localhost:80 -t public"
+        "start": "php -S localhost:80 -t public"
     }
 }

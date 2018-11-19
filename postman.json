@@ -8,6 +8,19 @@
 	"item": [
 		{
 			"name": "1. /api/auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c63a8c1-c4e6-482e-9992-3703539ca77d",
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.environment.set(\"variable_key\", \"variable_value\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -63,7 +76,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDIzMzkzODUsImp0aSI6IlBHNUYwWWhzRnJpV0toVWQzQVo0NzVGYXJpTXhIejh6WVVcL1wveHlvMytjWT0iLCJuYmYiOjE1NDIzMzkzOTUsImV4cCI6MTU0MjQyNTc5NSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.pdDSOtWTWOuKAzjEJZsPHYMicWvv2Jzk8dj1EAu0Us4"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDI0NzAxOTEsImp0aSI6IlN5TFpmRXVIaEZTMUpXS3hZbTNHOGpzallHM1k5QkR5c2hHenRuRjUrUGM9IiwibmJmIjoxNTQyNDcwMjAxLCJleHAiOjE1NDI1NTY2MDEsImRhdGEiOnsidXNlcklkIjoiMSIsInVzZXJOYW1lIjoiVGhpYWdvIENhYnJhbCIsInVzZXJMb2dpbiI6InRoaWFnbzIzIiwidXNlckVtYWlsIjoidGhpYWdvMjMxMjg2QGdtYWlsLmNvbSJ9fQ.CQohsgHj_nUI6oBBj67ur5tfT2g5bMAY-ouA6lbPsSY"
 					}
 				],
 				"body": {
@@ -99,7 +112,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDIzMzkzODUsImp0aSI6IlBHNUYwWWhzRnJpV0toVWQzQVo0NzVGYXJpTXhIejh6WVVcL1wveHlvMytjWT0iLCJuYmYiOjE1NDIzMzkzOTUsImV4cCI6MTU0MjQyNTc5NSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.pdDSOtWTWOuKAzjEJZsPHYMicWvv2Jzk8dj1EAu0Us4",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDI1OTE3MTEsImp0aSI6Ikh2U1JtbjBZZENURzNcL3dVbW0rNjF1MFwvbHA3RmZVaHE0TnVPVTAxT24rRT0iLCJuYmYiOjE1NDI1OTE3MjEsImV4cCI6MTU0MjY3ODEyMSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.XVnv7QUb5XwCWzJsrb-VjJS5hxDVf-TlenK6n-WO36Y",
 						"type": "text"
 					}
 				],
@@ -132,18 +145,38 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
 					},
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDIzMzkzODUsImp0aSI6IlBHNUYwWWhzRnJpV0toVWQzQVo0NzVGYXJpTXhIejh6WVVcL1wveHlvMytjWT0iLCJuYmYiOjE1NDIzMzkzOTUsImV4cCI6MTU0MjQyNTc5NSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.pdDSOtWTWOuKAzjEJZsPHYMicWvv2Jzk8dj1EAu0Us4"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDI0MTQ3MTQsImp0aSI6IlU0STJsaW8rbVZOY1oxd3l5b1hIWjBiVitPWkFieG1PYW4rT1lXeENTSkE9IiwibmJmIjoxNTQyNDE0NzI0LCJleHAiOjE1NDI1MDExMjQsImRhdGEiOnsidXNlcklkIjoiMSIsInVzZXJOYW1lIjoiVGhpYWdvIENhYnJhbCIsInVzZXJMb2dpbiI6InRoaWFnbzIzIiwidXNlckVtYWlsIjoidGhpYWdvMjMxMjg2QGdtYWlsLmNvbSJ9fQ.MAKIkg2RxliNsg2MagnbIQhYTGeq1bTveXXiP8jddt8"
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "descreva o titulo aqui",
+							"description": "Titulo da Notícia",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "descreva a descrição aqui\n",
+							"description": "Descrição da Notícia",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "descreva o corpo aqui\n",
+							"description": "Corpo da Notícia",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost/skeleton-api-slim-jwt-acl-mysql/public/api/news",
@@ -169,18 +202,40 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
 					},
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDIzMzkzODUsImp0aSI6IlBHNUYwWWhzRnJpV0toVWQzQVo0NzVGYXJpTXhIejh6WVVcL1wveHlvMytjWT0iLCJuYmYiOjE1NDIzMzkzOTUsImV4cCI6MTU0MjQyNTc5NSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.pdDSOtWTWOuKAzjEJZsPHYMicWvv2Jzk8dj1EAu0Us4"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDI0NzAxOTEsImp0aSI6IlN5TFpmRXVIaEZTMUpXS3hZbTNHOGpzallHM1k5QkR5c2hHenRuRjUrUGM9IiwibmJmIjoxNTQyNDcwMjAxLCJleHAiOjE1NDI1NTY2MDEsImRhdGEiOnsidXNlcklkIjoiMSIsInVzZXJOYW1lIjoiVGhpYWdvIENhYnJhbCIsInVzZXJMb2dpbiI6InRoaWFnbzIzIiwidXNlckVtYWlsIjoidGhpYWdvMjMxMjg2QGdtYWlsLmNvbSJ9fQ.CQohsgHj_nUI6oBBj67ur5tfT2g5bMAY-ouA6lbPsSY"
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Title news 3",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Description news 3",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Body news 3",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost/skeleton-api-slim-jwt-acl-mysql/public/api/news",
@@ -206,13 +261,14 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
 					},
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDIzMzkzODUsImp0aSI6IlBHNUYwWWhzRnJpV0toVWQzQVo0NzVGYXJpTXhIejh6WVVcL1wveHlvMytjWT0iLCJuYmYiOjE1NDIzMzkzOTUsImV4cCI6MTU0MjQyNTc5NSwiZGF0YSI6eyJ1c2VySWQiOiIxIiwidXNlck5hbWUiOiJUaGlhZ28gQ2FicmFsIiwidXNlckxvZ2luIjoidGhpYWdvMjMiLCJ1c2VyRW1haWwiOiJ0aGlhZ28yMzEyODZAZ21haWwuY29tIn19.pdDSOtWTWOuKAzjEJZsPHYMicWvv2Jzk8dj1EAu0Us4"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDI0NzAxOTEsImp0aSI6IlN5TFpmRXVIaEZTMUpXS3hZbTNHOGpzallHM1k5QkR5c2hHenRuRjUrUGM9IiwibmJmIjoxNTQyNDcwMjAxLCJleHAiOjE1NDI1NTY2MDEsImRhdGEiOnsidXNlcklkIjoiMSIsInVzZXJOYW1lIjoiVGhpYWdvIENhYnJhbCIsInVzZXJMb2dpbiI6InRoaWFnbzIzIiwidXNlckVtYWlsIjoidGhpYWdvMjMxMjg2QGdtYWlsLmNvbSJ9fQ.CQohsgHj_nUI6oBBj67ur5tfT2g5bMAY-ouA6lbPsSY"
 					}
 				],
 				"body": {
@@ -220,7 +276,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost/skeleton-api-slim-jwt-acl-mysql/public/api/news",
+					"raw": "http://localhost/skeleton-api-slim-jwt-acl-mysql/public/api/news/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -229,7 +285,8 @@
 						"skeleton-api-slim-jwt-acl-mysql",
 						"public",
 						"api",
-						"news"
+						"news",
+						"4"
 					]
 				},
 				"description": "Consultar todas as News. Necessário envio de Token e usuário ter permissão liberada para a rota."
